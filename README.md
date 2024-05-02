@@ -4,43 +4,53 @@
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 
-This project is an API built using **Java, Java Spring, H2 as the database.** 
+Esse projeto é uma API construída usando **Java, Java Spring, H2 como banco de dados.** 
 
-The API was developed for my [Youtube Tutorial](https://www.youtube.com/watch?v=QXunBiLq2SM), to demonstrate how  to solve the [PicPay Backend Challenge](https://github.com/PicPay/picpay-desafio-backend) using Java Spring.
+Essa API [PicPay Backend Challenge](https://github.com/PicPay/picpay-desafio-backend) é baseada em um desafio do PicPay  using Java Spring.
 
-The Unit tests was developed during another [Youtube Tutorial](https://youtu.be/T6ChO8LQxRE), with the aim to demonstrate how to write unit tests for Java Spring apps using JUnit, Mockito and AssertJ.
+## Índice
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
+- [Instalação](#Instalação)
+- [Configuração](#configuracao)
+- [Uso](#Uso)
 - [API Endpoints](#api-endpoints)
-- [Database](#database)
-- [Contributing](#contributing)
+- [Banco de dados](#database)
 
-## Installation
+## Instalação
 
-1. Clone the repository:
+1. Clone o repositório:
 
 ```bash
-git clone https://github.com/Fernanda-Kipper/auth-api.git
+git clone https://github.com/EntusiastaFabricioSales/picpaysimplificado.git
 ```
 
-2. Install dependencies with Maven
+2. Instale as dependências com o Maven
 
-## Usage
+3. Clone o [Email service](https://github.com/Fernanda-Kipper/desafio-backend-uber) repositório e siga o processo de instalação
 
-1. Start the application with Maven
-2. The API will be accessible at http://localhost:8080
+```bash
+git clone https://github.com/EntusiastaFabricioSales/email-service.git
+```
+
+4. Ajuste o Email Service application.properties para rodar na porta `8090`
+
+```yaml
+server.port=8090
+```
+
+5. Execute ambos microsserviços
+## Uso
+
+1. Inicie a aplicação com o Maven
+2. A API pode ser acessada em http://localhost:8080
 
 
 ## API Endpoints
-The API provides the following endpoints:
+The API fornece os seguintes Endpoints:
 
 **GET USERS**
 ```markdown
-GET /users - Retrieve a list of all users.
+GET /users - Retorna uma lista de todos os usuários.
 ```
 ```json
 [
@@ -69,7 +79,7 @@ GET /users - Retrieve a list of all users.
 
 **POST USERS**
 ```markdown
-POST /users - Register a new user into the App
+POST /users - Registra um novo usuário no app
 ```
 ```json
 {
@@ -85,7 +95,7 @@ POST /users - Register a new user into the App
 
 **POST TRANSACTIONS**
 ```markdown
-POST /transactions - Register a new Transaction between users (COMMON to COMMON or COMMON to MERCHANT)
+POST /transactions - Registra uma nova transação entre usuários (COMMON to COMMON or COMMON to MERCHANT)
 ```
 
 ```json
@@ -98,14 +108,4 @@ POST /transactions - Register a new Transaction between users (COMMON to COMMON 
 ```
 
 ## Database
-The project utilizes [H2 Database](https://www.h2database.com/html/tutorial.html) as the database. 
-
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request to the repository.
-
-When contributing to this project, please follow the existing code style, [commit conventions](https://www.conventionalcommits.org/en/v1.0.0/), and submit your changes in a separate branch.
-
-
-
-
+O projeto utiliza [H2 Database](https://www.h2database.com/html/tutorial.html) como banco de dados. 
