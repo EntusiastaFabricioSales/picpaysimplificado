@@ -2,6 +2,7 @@ package com.picpaysimplificado.services;
 
 import com.picpaysimplificado.domain.transaction.Transaction;
 import com.picpaysimplificado.domain.user.User;
+import com.picpaysimplificado.dtos.NotificationDTO;
 import com.picpaysimplificado.dtos.TransactionDTO;
 import com.picpaysimplificado.repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,8 +48,11 @@ public class TransactionService {
         this.userService.saveUser(sender);
         this.userService.saveUser(receiver);
 
-        this.notificationService.sendNotification(sender, "Transação realizada com sucesso");
-        this.notificationService.sendNotification(receiver, "Transação recebida com sucesso");
+        //this.notificationService.sendNotification(sender, "Transação realizada com sucesso");
+        String message = "Você recebeu uma transação de " + sender.getEmail() + " no valor de: " + transaction.value().toString();
+        
+        NotificationDTO emailRequest = new NotificationDTO(receiver.getEmail(), "Transação recebida com sucesso", message);
+        this.notificationService.sendEmail(emailRequest);
 
         return newTransaction;
     }
